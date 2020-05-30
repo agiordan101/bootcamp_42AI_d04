@@ -8,7 +8,8 @@ class FileLoader:
 
     def load(self, path):
         df = pd.read_csv(path)
-        print("Dimensions row/col : {} / {}".format(len(df), len(df.columns)))
+        print("Load \"{}\" / Dimensions row/col : {} / {}"
+              .format(path, len(df), len(df.columns)))
         return df
 
     def display(self, df, n):
@@ -16,9 +17,3 @@ class FileLoader:
             print(df[n:])
         else:
             print(df[:n])
-
-
-fl = FileLoader()
-df = fl.load("../athlete_events.csv")
-fl.display(df, 5)
-fl.display(df, -5)
