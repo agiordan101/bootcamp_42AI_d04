@@ -6,7 +6,7 @@ def howManyMedals(df, name):
     for i in range(len(df)):
         if df.loc[i, "Name"] == name:
             year = df.loc[i, "Year"]
-            if not year in dic:
+            if year not in dic:
                 dic[year] = {
                     "G": 0,
                     "S": 0,
